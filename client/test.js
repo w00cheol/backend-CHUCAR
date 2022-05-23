@@ -6,25 +6,11 @@ const qs = require('qs');
 //client.signup('sd', '1234', 'asd', 'asd', 'sad', 0,0,0);
 //client.kakaoLogin();
 
-
-// client.refreshToken('NG6AIpw4RTDpE6AXrCLvMGkoHrNKKUasRrAj3wo9dNoAAAF-8gzMdw');
-// client.showInfo('NG6AIpw4RTDpE6AXrCLvMGkoHrNKKUasRrAj3wo9dNoAAAF-8gzMdw');
-// client.checkToken('NG6AIpw4RTDpE6AXrCLvMGkoHrNKKUasRrAj3wo9dNoAAAF-8gzMdw');
-// client.findfromproid('NG6AIpw4RTDpE6AXrCLvMGkoHrNKKUasRrAj3wo9dNoAAAF-8gzMdw');
-// client.contractInfo('NG6AIpw4RTDpE6AXrCLvMGkoHrNKKUasRrAj3wo9dNoAAAF-8gzMdw');
-// client.contractFinish('NG6AIpw4RTDpE6AXrCLvMGkoHrNKKUasRrAj3wo9dNoAAAF-8gzMdw');
-// client.showReply('NG6AIpw4RTDpE6AXrCLvMGkoHrNKKUasRrAj3wo9dNoAAAF-8gzMdw');
-// client.findfromusrid('vfdLu78zaKH6yNjLHSZ1Fc61e3rl-719KRAlbwo9dZoAAAF_BHVAig');
-// client.show('NG6AIpw4RTDpE6AXrCLvMGkoHrNKKUasRrAj3wo9dNoAAAF-8gzMdw');
-// client.get_pro('NG6AIpw4RTDpE6AXrCLvMGkoHrNKKUasRrAj3wo9dNoAAAF-8gzMdw');
-// client.get_usr('NG6AIpw4RTDpE6AXrCLvMGkoHrNKKUasRrAj3wo9dNoAAAF-8gzMdw');
-// client.pro_signup('NG6AIpw4RTDpE6AXrCLvMGkoHrNKKUasRrAj3wo9dNoAAAF-8gzMdw');
-// client.usr_signup('NG6AIpw4RTDpE6AXrCLvMGkoHrNKKUasRrAj3wo9dNoAAAF-8gzMdw');
         // axios({
         //   url: "https://kapi.kakao.com/v1/user/logout",
         //   method: "post", // POST method
         //   headers: {
-        //       Authorization: `Bearer fDh6SXbHH-x3e_rn5Pzvm2vdx2nxSOxI419EFQo9dBEAAAF_A7sMFg`,
+        //       Authorization: `Bearer -`,
         //       "Content-Type": "application/x-www-form-urlencoded"
         //     }
         // })
@@ -32,7 +18,7 @@ const qs = require('qs');
       //   axios({
       //     url: `https://api.iamport.kr/subscribe/payments/unschedule`,
       //     method: "post",
-      //     headers: { "Authorization": 'd088638a820f43c7ea4ef26cf9381d549e4941e0' }, // 인증 토큰 Authorization header에 추가
+      //     headers: { "Authorization": '' }, // 인증 토큰 Authorization header에 추가
       //     data: {
       //     customer_uid: "1_1" // 카드(빌링키)와 1:1로 대응하는 값
       //     }
@@ -43,7 +29,7 @@ const qs = require('qs');
       //   method: 'post',
       //   url: 'http://34.64.207.117:3000/contract/send',
       //   headers:{
-      //     Authorization: 'vfdLu78zaKH6yNjLHSZ1Fc61e3rl-719KRAlbwo9dZoAAAF_BHVAig',
+      //     Authorization: '',
       //   },
       //   data:{
       //     catg:1, //1할부, 2렌트, 3리스, 4현금.
@@ -63,7 +49,7 @@ const qs = require('qs');
       //     usrid:''
       //   }
       // })
-// const a  = [ { uid: '173008012120003' } ];
+// const a  = [ { uid: '' } ];
 // console.log(a[0].uid);
 
 
@@ -71,7 +57,7 @@ async function a(){
   try{
     const word = encodeURIComponent('rrr')
     const temp = await axios({
-      url: `http://34.64.207.117:3000/contracts?&proid=2111801212&kind=&`,
+      url: `http://34.64.207.117:3000/contracts?&proid=&kind=&`,
       method: "get"
     })
     console.log(temp.data)
