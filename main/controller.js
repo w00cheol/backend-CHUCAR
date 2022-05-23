@@ -8,9 +8,9 @@ const con = mod.init(); //con => 연결객체
 const axios = require('axios');
 
 const kakao = { //나중에 import로 유출방지
-  clientID: '9e7627ff0adc857af4fd5e69de0222e6',
-  clientSecret: '9F00S9wCb8X6cggmdqesUVTYoQeD41P4',
-  redirectUri: 'http://34.64.207.117:3000/oauth'
+  clientID: '',
+  clientSecret: '',
+  redirectUri: ''
 }
 
 exports.home = (req, res) =>{
@@ -175,9 +175,9 @@ exports.refreshToken = async(req,res) => { //토큰 갱신
       headers:{'content-type':'application/x-www-form-urlencoded;charset=utf-8'},
       data:qs.stringify({
         grant_type: 'refresh_token',//특정 스트링
-        client_id:'9e7627ff0adc857af4fd5e69de0222e6',
+        client_id:'',
         refresh_token:refresh_token,
-        client_secret:'9F00S9wCb8X6cggmdqesUVTYoQeD41P4'
+        client_secret:''
       })//객체를 string 으로 변환
     })
     return res.json(newToken.data);
@@ -411,15 +411,15 @@ exports.billings = async (req, res) => { // 빌링키 요청
       method: "post", // POST method
       headers: { "Content-Type": "application/json" }, // "Content-Type": "application/json"
       data: {
-        imp_key: "0522871454882836", // REST API 키
-        imp_secret: "e9c0f18efc363ffa7c0721f42b6bde807bea6975f896919e29c367c2ea32f1d7a7d3e3c807f13a4b" // REST API Secret
+        imp_key: "", // REST API 키
+        imp_secret: "" // REST API Secret
       }
     });
     var date = new Date();
     const {access_token} = getToken.data.response;
     console.log(access_token);
     const getMerchant = await axios({
-      url: "http://34.64.207.117:3000/merchant",
+      url: "",
       method: "post", // POST method
       headers: { "Content-Type": "application/json" }, // "Content-Type": "application/json"
       data: {
@@ -461,8 +461,8 @@ exports.schedule = async (req, res) => {
       method: "post", // POST method
       headers: { "Content-Type": "application/json" }, // "Content-Type": "application/json"
       data: {
-        imp_key: "0522871454882836", // REST API 키
-        imp_secret: "e9c0f18efc363ffa7c0721f42b6bde807bea6975f896919e29c367c2ea32f1d7a7d3e3c807f13a4b" // REST API Secret
+        imp_key: "", // REST API 키
+        imp_secret: "" // REST API Secret
       }
     });
     const { access_token } = getToken.data.response; // 인증 토큰
@@ -476,7 +476,7 @@ exports.schedule = async (req, res) => {
     const paymentData = getPaymentData.data.response; // 조회한 결제 정보
 
     await axios({ //결제결과 저장
-      url: "http://34.64.207.117:3000/payments/save",
+      url: "",
       method: "POST",
       data: {
         paymentData:paymentData
@@ -563,8 +563,8 @@ exports.unschedule = async (req, res) => {
       method: "post", // POST method
       headers: { "Content-Type": "application/json" }, // "Content-Type": "application/json"
       data: {
-        imp_key: "0522871454882836", // REST API 키
-        imp_secret: "e9c0f18efc363ffa7c0721f42b6bde807bea6975f896919e29c367c2ea32f1d7a7d3e3c807f13a4b" // REST API Secret
+        imp_key: "", // REST API 키
+        imp_secret: "" // REST API Secret
       }
     });
     const {access_token} = getToken.data.response;
