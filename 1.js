@@ -53,7 +53,7 @@ export default function PaymentPage({navigation}) {
     };
     return (
       <IMP.Payment
-        userCode={'imp62201906'} // 가맹점 식별코드
+        userCode={''} // 가맹점 식별코드
         data={data} // 결제 데이터
         callback={callback} // 결제 종료 후 콜백
         // loading={{
