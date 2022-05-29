@@ -34,3 +34,7 @@
 [B/E]
 * NodeJS
 * MySQL
+
+# 실행방법
+
+docker run -d -p 3000:3000 w00cheol/chucar:latest
